@@ -14,6 +14,18 @@ lib LibFLAC
     MAX_METADATA_TYPE = 126
   end
 
+  struct StreamMetadata_StreamInfo
+    min_blocksize   : UInt32
+    max_blocksize   : UInt32
+    min_framesize   : UInt32
+    max_framesize   : UInt32
+    sample_rate     : UInt32
+    channels        : UInt32
+    bits_per_sample : UInt32
+    total_samples   : UInt64
+    md5sum          : UInt8[16]
+  end
+
   struct StreamMetadata_VorbisComment_Entry
     length : UInt32
     entry  : UInt8*
@@ -26,6 +38,7 @@ lib LibFLAC
   end
 
   union StreamMetadataTypes
+    stream_info    : StreamMetadata_StreamInfo
     vorbis_comment : StreamMetadata_VorbisComment
   end
 
@@ -36,6 +49,7 @@ lib LibFLAC
     data    : StreamMetadataTypes
   end
 
+  fun metadata_get_streaminfo = FLAC__metadata_get_streaminfo(filename : UInt8 *, streaminfo : StreamMetadata *) : Bool
   fun metadata_get_tags = FLAC__metadata_get_tags(filename : UInt8 *, tags : StreamMetadata **) : Bool
   fun metadata_object_delete = FLAC__metadata_object_delete(object : StreamMetadata *)
 
