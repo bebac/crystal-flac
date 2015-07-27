@@ -6,6 +6,12 @@ libFLAC bindings to Crystal **INCOMPLETE**
 
 ## Installation
 
+Install libflac
+
+```
+sudo apt-get install libflac-dev
+```
+
 Add it to `Projectfile`
 
 ```crystal
