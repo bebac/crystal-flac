@@ -1,5 +1,7 @@
 # flac
 
+[![Build Status](https://travis-ci.org/bebac/crystal-flac.svg)](https://travis-ci.org/bebac/crystal-flac)
+
 libFLAC bindings to Crystal **INCOMPLETE**
 
 ## Installation
