@@ -4,7 +4,7 @@ before_install: |
   sudo apt-get -q update
 
 install: |
-  sudo apt-get install flac crystal
+  sudo apt-get install libflac-dev crystal
 
 script:
   - crystal spec
