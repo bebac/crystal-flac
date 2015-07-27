@@ -36,7 +36,7 @@ lib LibFLAC
     data    : StreamMetadataTypes
   end
 
-  fun metadata_get_tags = FLAC__metadata_get_tags(filename : UInt8 *, tags : FLAC__StreamMetadata **) : Bool
+  fun metadata_get_tags = FLAC__metadata_get_tags(filename : UInt8 *, tags : StreamMetadata **) : Bool
   fun metadata_object_delete = FLAC__metadata_object_delete(object : StreamMetadata *)
 
   fun metadata_object_vorbiscomment_entry_to_name_value_pair = FLAC__metadata_object_vorbiscomment_entry_to_name_value_pair(entry : StreamMetadata_VorbisComment_Entry, field_name : UInt8 **, field_value : UInt8 **) : Bool
