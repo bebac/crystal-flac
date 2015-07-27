@@ -30,6 +30,13 @@ module FLAC
       end
     end
 
+    def each
+      length.times do |i|
+        name, value = self[i]
+        yield name, value
+      end
+    end
+
     private def comments
       @ptr.value.data.vorbis_comment.comments
     end
