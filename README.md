@@ -8,7 +8,7 @@ Add it to `Projectfile`
 
 ```crystal
 deps do
-  github "[your-github-name]/crystal-flac"
+  github "bebac/crystal-flac"
 end
 ```
 
