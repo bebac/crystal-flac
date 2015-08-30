@@ -74,10 +74,19 @@ lib LibFLAC
     data        : UInt8 *
   end
 
+  struct StreamMetadata_CueSheet
+    media_catalog_number : UInt8[129]
+    lead_in              : UInt64
+    is_cd                : Bool
+    num_tracks           : UInt32
+    tracks               : Void*
+  end
+
   union StreamMetadataTypes
     stream_info    : StreamMetadata_StreamInfo
     vorbis_comment : StreamMetadata_VorbisComment
     picture        : StreamMetadata_Picture
+    cue_sheet      : StreamMetadata_CueSheet
   end
 
   struct StreamMetadata
