@@ -47,5 +47,11 @@ module FLAC
     rescue
       nil
     end
+
+    def self.media(filename)
+      new(filename, LibFLAC::PictureType::MEDIA)
+    rescue
+      nil
+    end
   end
 end
